@@ -27,7 +27,7 @@ import java.util.Stack;
 
 public class HomeWorkTwo {
     public static void main(String[] args) {
-        String s = "[{{{{{{{{[[[[[[[]]]]]]]}}]}}}}}}";
+        String s = "[{{{{{{{{[[]}";
         System.out.println("stringTrueFalse() = " + stringTrueFalseSteck(s));
         System.out.println("stringTrueFalseLinked() = " + stringTrueFalseLinked(s));
     }
@@ -68,6 +68,7 @@ public class HomeWorkTwo {
      * @apiNote определяет, является ли входная строка допустимой.s'('')''{''}''['']'
      * Открытые кронштейны должны быть закрыты кронштейнами того же типа.
      *  Каждая закрывающая скобка имеет соответствующую открытую скобку того же типа.
+     *  НЕ РАБОТАЕТ!!!
      * @param s
      * @return
      */
@@ -75,9 +76,7 @@ public class HomeWorkTwo {
         LinkedHashSet<Character> roundBracket = new LinkedHashSet<>();
         LinkedHashSet<Character> curlyBracket = new LinkedHashSet<>();
         LinkedHashSet<Character> squareBracket = new LinkedHashSet<>();
-        if (s.length() % 2 != 0) {
-            return false;
-        }
+
         for (char ch : s.toCharArray()) {
             if (ch == '(' || ch == ')') roundBracket.add(ch);
             if (ch == '{' || ch == '}') curlyBracket.add(ch);
