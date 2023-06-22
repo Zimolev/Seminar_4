@@ -29,7 +29,6 @@ public class HomeWorkTwo {
     public static void main(String[] args) {
         String s = "[{{{{{{{{[[]}";
         System.out.println("stringTrueFalse() = " + stringTrueFalseSteck(s));
-        System.out.println("stringTrueFalseLinked() = " + stringTrueFalseLinked(s));
     }
 
     /**
@@ -64,25 +63,4 @@ public class HomeWorkTwo {
         return stack.empty();
     }
 
-    /**
-     * @apiNote определяет, является ли входная строка допустимой.s'('')''{''}''['']'
-     * Открытые кронштейны должны быть закрыты кронштейнами того же типа.
-     *  Каждая закрывающая скобка имеет соответствующую открытую скобку того же типа.
-     *  НЕ РАБОТАЕТ!!!
-     * @param s
-     * @return
-     */
-    public static boolean stringTrueFalseLinked(String s) {
-        LinkedHashSet<Character> roundBracket = new LinkedHashSet<>();
-        LinkedHashSet<Character> curlyBracket = new LinkedHashSet<>();
-        LinkedHashSet<Character> squareBracket = new LinkedHashSet<>();
-
-        for (char ch : s.toCharArray()) {
-            if (ch == '(' || ch == ')') roundBracket.add(ch);
-            if (ch == '{' || ch == '}') curlyBracket.add(ch);
-            if (ch == '[' || ch == ']') squareBracket.add(ch);
-        }
-        if (roundBracket.size() != 1 && squareBracket.size() != 1 && curlyBracket.size() != 1) return true;
-        return false;
-    }
 }
